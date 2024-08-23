@@ -12,7 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('productos', function (Blueprint $table) {
-            $table->id();
+            $table->unsignedInteger('id_producto',5)->autoIncrement()->unique();
+            $table->string('nombre',30);
+            $table->text('descripción');
+            $table->decimal('precio_base', 8, 2); // Formato de precio $999999.99
             $table->timestamps();
         });
     }

@@ -11,9 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('personalizacions', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::create('personalizaciones', function (Blueprint $table) {
+            $table->unsignedInteger('id_personalizacion',5)->autoIncrement()->unique();
+            $table->string('nombre',10);
+            $table->text('descripcion');
+            $table->decimal('costo_adicional', 8,2);
         });
     }
 
@@ -22,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('personalizacions');
+        Schema::dropIfExists('personalizaciones');
     }
 };

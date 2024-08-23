@@ -17,7 +17,8 @@ return new class extends Migration
             $table->string('telefono',9);
             $table->string('email',30)->unique();
             $table->string('contraseña',64);
-            $table->string('rol',1)->default('C'); #A=Admin, C=Cliente
+          
+            $table->char('rol',1)->default('C'); //'A' para Administrador, 'C' para Cliente.
             $table->timestamps();
         });
     }
