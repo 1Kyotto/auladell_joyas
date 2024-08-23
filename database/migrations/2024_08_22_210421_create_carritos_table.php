@@ -12,8 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('carritos', function (Blueprint $table) {
-            $table->id();
+            $table->unsignedInteger('id_carrito',5)->autoIncrement()->unique();
+            $table->unsignedInteger('id_usuario',5)->nullable();
+            $table->unsignedInteger('id_invitado',5)->nullable();
             $table->timestamps();
+            $table->foreign('id_usuario')->references('id_usuario')->on('usuarios');
+            $table->foreign('id_invitado')->references('id_invitado')->on('invitados');
         });
     }
 
