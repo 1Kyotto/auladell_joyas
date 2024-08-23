@@ -12,7 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('usuarios', function (Blueprint $table) {
-            $table->id();
+            $table->unsignedInteger('id_usuario',5)->autoIncrement()->unique();
+            $table->string('nombre',30);
+            $table->string('telefono',9);
+            $table->string('email',30)->unique();
+            $table->string('contraseña',64);
+            $table->string('rol',1)->default('C'); #A=Admin, C=Cliente
             $table->timestamps();
         });
     }

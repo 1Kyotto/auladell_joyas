@@ -11,17 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pedidos', function (Blueprint $table) {
-            $table->unsignedInteger('id_pedido',5)->autoIncrement()->unique();
+        Schema::create('direcciones_envios', function (Blueprint $table) {
+            $table->unsignedInteger('id_direccion',5)->autoIncrement()->unique();
             $table->unsignedInteger('id_usuario',5)->nullable();
             $table->unsignedInteger('id_invitado',5)->nullable();
-            $table->unsignedInteger('id_direccion',5);
-            $table->decimal('total');
-            $table->enum('estado',['En produccion','Enviado','Completado','Cancelado']);
+            $table->string('ciudad',30);
+            $table->string('comuna',30);
+            $table->string('direccion',30);
             $table->timestamps();
             $table->foreign('id_usuario')->references('id_usuario')->on('usuarios');
             $table->foreign('id_invitado')->references('id_invitado')->on('invitados');
-            $table->foreign('id_direccion')->references('id_direccion')->on('direcciones_envios');
+
         });
     }
 
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pedidos');
+        Schema::dropIfExists('direcciones_envios');
     }
 };
