@@ -12,7 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('invitados', function (Blueprint $table) {
-            $table->id();
+            $table->unsignedInteger('id_invitado',5)->autoIncrement()->unique();
+            $table->string('nombre',30);
+            $table->string('telefono',9);
+            $table->string('email',30)->unique();
+            $table->char('rol',1)->default('C');
             $table->timestamps();
         });
     }
