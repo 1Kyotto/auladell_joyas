@@ -20,5 +20,4 @@ class PersonalizacionProducto extends Model
     public function personalizacion(){
         return $this->belongsTo(Personalizacion::class,'id_personalizacion');
     }
-
 }

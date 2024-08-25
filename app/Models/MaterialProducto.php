@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Material;
 use App\Models\Producto;
 
-
 class MaterialProducto extends Model
 {
     use HasFactory;

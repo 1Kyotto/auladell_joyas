@@ -7,11 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Personalizacion;
 use App\Models\PedidoProducto;
 
-
 class SeleccionPersonalizacion extends Model
 {
     use HasFactory;
-
+  
     protected $table = 'selecciones_personalizaciones';
     protected $fillable = ['id_personalizacion','id_pedido_producto','cantidad'];
 
