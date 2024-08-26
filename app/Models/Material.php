@@ -17,19 +17,16 @@ class Material extends Model
     protected $table = 'materiales';
     protected $fillable = ['nombre', 'descripcion', 'unidad', 'precio_por_unidad', 'cantidad_en_stock'];
     
-    public function inventarios()
-    {
+    public function inventarios(){
         return $this->hasMany(Inventario::class, 'id_material');
     }
 
-    public function materialesPersonalizaciones()
-    {
+    public function materialesPersonalizaciones(){
         return $this->hasMany(MaterialPersonalizacion::class, 'id_material');
         
     }
 
-    public function materialesProductos()
-    {
+    public function materialesProductos(){
         return $this->hasMany(MaterialProducto::class, 'id_material');
         
     }

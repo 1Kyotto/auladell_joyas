@@ -15,13 +15,11 @@ class Inventario extends Model
     protected $table = 'inventarios';
     protected $fillable = ['id_inventario', 'id_material', 'realizado_por', 'cantidad', 'tipo_transaccion', 'fecha'];
     
-    public function material()
-    {
+    public function material(){
         return $this->belongsTo(Material::class, 'id_material');
     }
 
-    public function realizadoPor()
-    {
+    public function realizadoPor(){
         return $this->belongsTo(Usuario::class, 'id_usuario');
     }
 }

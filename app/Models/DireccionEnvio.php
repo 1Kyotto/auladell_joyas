@@ -23,3 +23,4 @@ class DireccionEnvio extends Model
     public function pedidos(){
         return $this->hasMany(Pedido::class,'id_direccion');
     }
+}

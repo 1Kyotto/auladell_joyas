@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('materiales', function (Blueprint $table) {
-            $table->unsignedInteger('id_material',5)->autoIncrement()->unique();
+            $table->id('id_material',5);
             $table->string('nombre',30);
             $table->text('descripcion');
             $table->string('unidad',10); //Unidad de medida: gr, kg, kl...

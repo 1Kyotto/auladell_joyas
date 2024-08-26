@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pagos', function (Blueprint $table) {
-            $table->unsignedInteger('id_pago',5)->autoIncrement()->unique();
+            $table->id('id_pago',5);
             $table->unsignedInteger('id_pedido',5);
             $table->enum('metodo_pago',['Credito','Debito','Transferencia']);
             $table->decimal('valor');

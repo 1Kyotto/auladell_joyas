@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('selecciones_personalizaciones', function (Blueprint $table) {
-            $table->unsignedInteger('id_seleccion_personalizacion',5)->autoIncrement()->unique();
+            $table->id('id_seleccion_personalizacion',5);
             $table->unsignedInteger('id_pedido_producto',5);
             $table->unsignedInteger('id_personalizacion',5);
             $table->integer('cantidad');
