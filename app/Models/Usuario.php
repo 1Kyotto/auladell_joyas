@@ -16,7 +16,7 @@ class Usuario extends Model
 
     //Especificaciones de nombre de la tabla y sus atributos
     protected $table = 'usuarios';
-    protected $fillable = ['nombre', 'telefono', 'email', 'contraseña', 'rol'];
+    protected $fillable = ['id_contacto', 'contraseña', 'rol'];
 
     //Un usuario puede tener muchas direcciones de envío
     public function direcciones()
@@ -40,5 +40,11 @@ class Usuario extends Model
     public function inventarios()
     {
         return $this->hasMany(Inventario::class, 'realizado_por');
+    }
+
+    //Contacto
+    public function contacto()
+    {
+        return $this->hasOne(Inventario::class, 'id_usuario');
     }
 }

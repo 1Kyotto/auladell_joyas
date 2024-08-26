@@ -18,28 +18,23 @@ class Pedido extends Model
     protected $table = 'pedidos';
     protected $fillable = ['id_invitado', 'id_usuario', 'id_direccion', 'total', 'estado'];
 
-    public function invitado()
-    {
+    public function invitado(){
         return $this->belongsTo(Invitado::class, 'id_invitado');
     }
 
-    public function usuario()
-    {
+    public function usuario(){
         return $this->belongsTo(Usuario::class, 'id_usuario');
     }
 
-    public function direccion()
-    {
+    public function direccion(){
         return $this->belongsTo(DireccionEnvio::class, 'id_direccion');
     }
 
-    public function pagos()
-    {
-        return $this->hasMany(Pago::class, 'id_pedido');
+    public function pago(){
+        return $this->hasOne(Pago::class,'id_pedido');
     }
 
-    public function productosEnPedidos()
-    {
+    public function productosEnPedidos(){
         return $this->hasMany(PedidoProducto::class, 'id_pedido');
     }
 

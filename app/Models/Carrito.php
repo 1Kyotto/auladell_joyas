@@ -16,18 +16,15 @@ class Carrito extends Model
     protected $table = 'carritos';
     protected $fillable = ['id_carrito','id_usuario','id_invitado'];
 
-    public function usuario()
-    {
+    public function usuario(){
         return $this->belongsTo(Usuario::class, 'id_usuario');
     }
 
-    public function invitado()
-    {
+    public function invitado(){
         return $this->belongsTo(Invitado::class, 'id_invitado');
     }
 
-    public function productosEnCarritos()
-    {
+    public function productosEnCarritos(){
         return $this->hasMany(CarritoProducto::class, 'id_carrito');
     }
 }
