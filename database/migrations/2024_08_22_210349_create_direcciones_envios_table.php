@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('direcciones_envios', function (Blueprint $table) {
-            $table->id('id_direccion',5);
-            $table->unsignedInteger('id_usuario',5)->nullable();
-            $table->unsignedInteger('id_invitado',5)->nullable();
+            $table->increments('id_direccion');
+            $table->unsignedInteger('id_usuario')->nullable();
+            $table->unsignedInteger('id_invitado')->nullable();
             $table->string('ciudad',30);
             $table->string('comuna',30);
             $table->string('direccion',30);

@@ -14,10 +14,12 @@ class MaterialProducto extends Model
     protected $table = 'materiales_productos';
     protected $fillable = ['id_producto','id_material','cantidad_necesaria'];
 
-    public function material(){
+    public function material()
+    {
         return $this->belongsTo(Material::class,'id_material');
     }
-    public function producto(){
+    public function producto()
+    {
         return $this->belongsTo(Producto::class,'id_producto');
     }
 }

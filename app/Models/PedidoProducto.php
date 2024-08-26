@@ -15,13 +15,16 @@ class PedidoProducto extends Model
     protected $table = 'pedidos_productos';
     protected $fillable = ['id_pedido','id_producto','cantidad','precio_unitario','precio_total'];
 
-    public function producto(){
+    public function producto()
+    {
         return $this->belongsTo(Producto::class,'id_producto');
     }
-    public function seleccionPersonalizacion(){
+    public function seleccionPersonalizacion()
+    {
         return $this->hasMany(SeleccionPersonalizacion::class,'id_pedido_producto');
     }
-    public function pedido(){
+    public function pedido()
+    {
         return $this->belongsTo(Pedido::class,'id_pedido');
     }
 }

@@ -12,10 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pedidos', function (Blueprint $table) {
-            $table->id('id_pedido',5);
-            $table->unsignedInteger('id_usuario',5)->nullable();
-            $table->unsignedInteger('id_invitado',5)->nullable();
-            $table->unsignedInteger('id_direccion',5);
+            $table->increments('id_pedido');
+            $table->unsignedInteger('id_usuario')->nullable();
+            $table->unsignedInteger('id_invitado')->nullable();
+            $table->unsignedInteger('id_direccion');
             $table->decimal('total');
             $table->enum('estado',['En produccion','Enviado','Completado','Cancelado']);
             $table->timestamps();

@@ -14,10 +14,12 @@ class PersonalizacionProducto extends Model
     protected $table = 'personalizaciones_productos';
     protected $fillable = ['id_personalizacion','id_producto'];
 
-    public function producto(){
+    public function producto()
+    {
         return $this->belongsTo(Producto::class,'id_producto');
     }
-    public function personalizacion(){
+    public function personalizacion()
+    {
         return $this->belongsTo(Personalizacion::class,'id_personalizacion');
     }
 }

@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pagos', function (Blueprint $table) {
-            $table->id('id_pago',5);
-            $table->unsignedInteger('id_pedido',5);
+            $table->increments('id_pago');
+            $table->unsignedInteger('id_pedido');
             $table->enum('metodo_pago',['Credito','Debito','Transferencia']);
             $table->decimal('valor');
             $table->enum('estado',['Confirmado','Cancelado','En transaccion','Fallido']);
