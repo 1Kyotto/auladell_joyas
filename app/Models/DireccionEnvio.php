@@ -14,12 +14,16 @@ class DireccionEnvio extends Model
     protected $table = 'direcciones_envios';
     protected $fillable = ['id_usuario','id_invitado','ciudad','comuna','direccion'];
 
-    public function usuario(){
+    public function usuario()
+    {
         return $this->belongsTo(Usuario::class,'id_usuario');
     }
-    public function invitado(){
+    public function invitado()
+    {
         return $this->belongsTo(Invitado::class,'id_invitado');
     }
-    public function pedidos(){
+    public function pedidos()
+    {
         return $this->hasMany(Pedido::class,'id_direccion');
     }
+}
