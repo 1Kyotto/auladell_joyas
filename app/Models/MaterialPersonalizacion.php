@@ -14,10 +14,12 @@ class MaterialPersonalizacion extends Model
     protected $table = 'materiales_personalizaciones';
     protected $fillable = ['id_personalizacion','id_material','cantidad_necesaria'];
 
-    public function personalizacion(){
+    public function personalizacion()
+    {
         return $this->belongsTo(Personalizacion::class,'id_personalizacion');
     }
-    public function material(){
+    public function material()
+    {
         return $this->belongsTo(Material::class,'id_material');
     }
 }
