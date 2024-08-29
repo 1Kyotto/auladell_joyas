@@ -8,9 +8,9 @@
         @vite('resources/css/app.css')
 
     </head>
-    <body class="grid h-screen text-center">
+    <body class="grid grid-cols-6 h-screen text-center">
         
-        <div class="nav w-100 bg-teal-500">
+        <div class="nav col-span-6 bg-teal-500">
 			NAVBAR
 			<div class="nav-1">
 
@@ -22,8 +22,7 @@
 
         @yield('contenido')
 
-
-        <footer class="bg-cyan-600">
+        <footer class="col-span-6 bg-cyan-600">
 			FOOTER
 		</footer>
     </body>
