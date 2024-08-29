@@ -24,9 +24,7 @@ export default {
                     900: '#004d40',
                 },
             },
-            fontSize: {
-                'xs': '12px', // Tamaño de fuente 12px
-            },
+            
             borderRadius: {
                 'main-radius': 'var(--main-radius)', // Radio de borde personalizado
             },
